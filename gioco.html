@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+	    <h1 id = 'titolo'> </h1>
+    	<h3 id= 'CARTA'onclick="selCarta()"> - CARTA </h3> <!--. con il parametro onclick  posso ottenere una risposta quando clicco sul CARTA ecc. -->
+
+    	<h3 id= 'FORBICE'onclick ="selSasso()"> - SASSO </h3>
+    	<h3 id= 'SASSO'onclick="selForbice()"> - FORBICE </h3>
+  
+    	<button id='CONFERMA'onclick ="result()"> CONFERMA </button>
+	
+
+
+  
+
+  <script>
+  	'use strict'
+
+    alert( "Ciao, facciamo un piccolo gioco " );
+
+    let tuoNome = prompt( "Prima  dicci come ti chiami :");
+
+    document.getElementById("titolo").innerHTML = " Ti stavamo aspettando " + tuoNome + " ora fai la tua scelta :"; // sostituisco al titolo questo messaggio
+
+    let tuaScelta ; // creo una variabile vuota
+
+    // ora creo le funzioni che verranno chiamate quando l'utente cliccherà sulle scelte;funzio
+
+    function selCarta(){
+    	tuaScelta = "CARTA";
+    	alert(tuoNome  +" hai selezionato  "+ tuaScelta);
+
+    }
+    function selSasso(){
+    	tuaScelta = "SASSO";
+    	alert(tuoNome +" hai selezionato  "+ tuaScelta);
+
+    }
+    function selForbice(){
+    	tuaScelta = "FORBICE";
+    	alert(tuoNome  +" hai selezionato  "+ tuaScelta);
+
+    }
+    function result(){
+    	document.getElementById("CARTA").style.display = "none";
+    	document.getElementById("SASSO").style.display = "none";
+    	document.getElementById("FORBICE").style.display ="none";
+    	document.getElementById("CONFERMA").style.display = "none";
+    	
+
+    	let cpuScelta ;
+
+    	if (tuaScelta == "CARTA"){
+    		cpuScelta = "FORBICI" ;
+    	}
+    	if (tuaScelta == "FORBICI"){
+    		cpuScelta = "SASSO" ;
+    	}
+    	if (tuaScelta == "SASSO"){
+    		cpuScelta = "CARTA" ;
+    	}
+
+    	document.getElementById("titolo").innerHTML = tuoNome + " hai perso ahahaha";
+    	
+
+
+
+    }
+
+  </script>
+
+  
+
+</body>
+
+</html>
